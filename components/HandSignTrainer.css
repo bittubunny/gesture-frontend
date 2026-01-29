@@ -1,0 +1,66 @@
+.trainer-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  margin: 20px 0;
+  text-align: center;
+}
+
+.trainer-title {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+.trainer-button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.trainer-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 242, 254, 0.3);
+}
+
+.trainer-button:disabled {
+  background: #b5c7d3;
+  cursor: not-allowed;
+}
+
+.trainer-loading {
+  animation: pulse 1s infinite alternate;
+}
+
+.trainer-status {
+  margin-top: 15px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Animation */
+@keyframes pulse {
+  from { opacity: 1; }
+  to { opacity: 0.6; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .trainer-container {
+    padding: 15px;
+  }
+
+  .trainer-title {
+    font-size: 18px;
+  }
+
+  .trainer-button {
+    width: 100%;
+  }
+}

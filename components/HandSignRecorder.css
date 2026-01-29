@@ -1,0 +1,106 @@
+.recorder-container {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  margin: 20px 0;
+}
+
+.recorder-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #38bdf8;
+}
+
+.recorder-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.recorder-input {
+  flex: 1;
+  min-width: 140px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
+}
+
+.recorder-input:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+.recorder-button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.recorder-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.4);
+}
+
+.webcam-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 3;
+  margin: 10px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.webcam-wrapper video,
+.webcam-wrapper canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recorder-status {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #facc15;
+}
+
+/* Secondary button (Start Detection) */
+.recorder-secondary-btn {
+  margin-top: 12px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.recorder-secondary-btn:hover {
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.4);
+}
+
+/* 📱 Mobile tweaks */
+@media (max-width: 600px) {
+  .recorder-container {
+    padding: 15px;
+  }
+
+  .recorder-title {
+    font-size: 1.2rem;
+  }
+
+  .recorder-controls {
+    flex-direction: column;
+  }
+
+  .recorder-button {
+    width: 100%;
+  }
+}
