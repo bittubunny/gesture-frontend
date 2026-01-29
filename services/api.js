@@ -1,22 +1,28 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000";
+// 🔁 Use Render backend in production, localhost in development
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const api = axios.create({
+  baseURL: API_URL,
+});
 
 export const captureHandSign = (userId, landmarks, label) => {
-  return axios.post(`${API_URL}/capture`, {
+  return api.post("/capture", {
     user_id: userId,
-    landmarks: landmarks,
-    label: label,
+    landmarks,
+    label,
   });
 };
 
 export const trainHandSignModel = (userId) => {
-  return axios.post(`${API_URL}/train`, { user_id: userId });
+  return api.post("/train", { user_id: userId });
 };
 
 export const predictHandSign = (userId, landmarks) => {
-  return axios.post(`${API_URL}/predict`, {
+  return api.post("/predict", {
     user_id: userId,
-    landmarks: landmarks,
+    landmarks,
   });
 };
